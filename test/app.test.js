@@ -11,3 +11,7 @@ test('Health between 15 and 50', () => {
 test('Health lower than 15', () => {
   expect(healthBar({ name: 'Маг', health: 5 })).toBe('critical');
 });
+
+test('Health error', () => {
+  expect(() => healthBar({ name: 'Маг', health: 'dead' })).toThrowError('Incorrect health value');
+});

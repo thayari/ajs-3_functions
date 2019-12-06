@@ -6,6 +6,8 @@ export default function healthBar(options) {
     healthText = 'wounded';
   } else if (options.health <= 15) {
     healthText = 'critical';
+  } else {
+    throw new Error('Incorrect health value');
   }
   return healthText;
 }
